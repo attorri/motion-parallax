@@ -1,0 +1,83 @@
+// Landscape Example 
+// Coding for Artists - 2019
+// Instructor: Urban Reininger
+
+function setup() {
+  createCanvas(600, 300);
+} // end setup
+
+function draw() {
+  background(159, 189, 237);// rgb  0-255
+  
+  // pretty sky
+  
+  //const a = Math.random(255);
+  //const c = Math.random(255);
+  function GetRandomInteger(a, b) 
+  {
+  return Math.random(b);
+  }
+
+var randomInt = GetRandomInteger(1, 255);
+
+
+
+  // sun
+  noStroke();
+  fill(300,200, 10);
+  ellipse(450,40,40);
+  //ellipse(200,(100+frameCount/10),30,30); 1
+  //text(frameCount,200,150);
+  
+  // mountains
+  fill(randomInt, 55, 100);
+  mountain =  triangle(-10,208,102,40,208,208);
+  //mountain.material.color = 0xffffff;
+  //triangle(107,208,142,105,223,200);
+
+/*
+  fill(77,66,7);
+  triangle(250,200,300,63,145,200);
+*/
+
+  // cloud
+  fill(255,255,255,50,);
+  //fill(0,0,0);
+  ellipse(frameCount/4,150,40,20);
+  
+  //fill(0,0,0);
+  
+
+  // Green Ground
+  noStroke();
+  fill(0,100,0);// rgb
+  rect(0,200,width,200);
+  
+  // tree 1
+  fill(67, 51, 8); // tree brown
+  rect(320,194,10,20); // trunk
+  fill(23, 69, 29);
+  ellipse(326,172,20,20);// tree top
+  ellipse(324,192,30,20);
+  ellipse(330,182,20,20);
+
+  // tree 2
+  push();
+    translate(-40,-40);
+    scale(1.5);
+    fill(67, 51, 8); // tree brown
+    rect(320,194,10,20); // trunk
+    fill(23, 69, 29);
+    ellipse(326,192,20,20);// tree top
+    ellipse(324,172,30,20);
+    ellipse(330,182,20,20);
+  pop();
+  
+  mouseLocation();
+} // end draw
+
+function mouseLocation(){
+  fill(255);
+  text(("x: " + mouseX),20,10);
+  text(("y: " + mouseY),20,20);
+} // end mouseLocation
